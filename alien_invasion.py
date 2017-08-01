@@ -16,14 +16,7 @@ def run_game():
     while True:
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
-        gf.update_bullets(bullets)
-        bullets.update()
-
-        #Get rid of old bullets
-        for bullet in bullets.copy():
-            if bullet.rect.bottom <= 0:
-                bullets.remove(bullet)
-        print(len(bullets))
+        gf.update_bullets(bullets)             
         gf.update_screen(ai_settings, screen, ship, bullets)
         screen.fill(ai_settings.bg_color)
 run_game()
